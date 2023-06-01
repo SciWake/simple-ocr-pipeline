@@ -1,0 +1,9 @@
+_target_: src.models.components.decoders.rnn.TokenDecoder
+
+input_size: 512
+tokens_count: 48
+rnn_type: GRU
+num_layers: 2
+tail_hidden_linears: [256]
+bidirectional: false
+vocab_length: 78

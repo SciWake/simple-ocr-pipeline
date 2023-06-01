@@ -1,0 +1,5 @@
+_target_: albumentations.Compose
+transforms:
+  - _target_: albumentations.ColorJitter
+  - _target_: albumentations.Rotate
+    limit: 5

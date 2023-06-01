@@ -1,0 +1,10 @@
+_target_: albumentations.Compose
+transforms:
+  - _target_: src.data.components.ocr_resize.OCRAdaptiveResize
+    height: 64
+    width: 512
+  - _target_: albumentations.Normalize
+  - _target_: albumentations.pytorch.ToTensorV2
+  - _target_: src.data.components.text_encoding.TextEncoder
+    vocab: 'абвгдежзийклмнопрстуфхцчшщъыьэюя0123456789/,:- ё.(")'
+    target_text_size: 64

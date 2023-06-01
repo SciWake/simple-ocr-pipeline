@@ -1,0 +1,12 @@
+_target_: src.data.datamodule.OCRDataModule
+
+defaults:
+ - base_transforms: image_preprocessing.yaml
+ - augmentations: augmentations.yaml
+
+train_dataset_df_path: /pub/home/almakarov1/ocr/data/train_df.csv
+val_dataset_df_path: /pub/home/almakarov1/ocr/data/test_df.csv
+vocab: абвгдежзийклмнопрстуфхцчшщъыьэюя0123456789/,:- ё.(")
+batch_size: 64
+num_workers: 8
+pin_memory: False

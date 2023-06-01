@@ -1,0 +1,23 @@
+_target_: src.models.classificator.Classificator
+
+n_classes: 3
+sev_loss_weight: 0.000001
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.00001
+  weight_decay: 0.000001
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.OneCycleLR
+  _partial_: true
+  max_lr: 0.001
+  total_steps: null
+  cycle_momentum: false
+  pct_start: null
+
+net:
+  _target_: src.models.components.resnext.ResNeXt
+  model_path: /pub/home/almakarov1/training/resnext50_32x4d.pth
+  n_classes: 3

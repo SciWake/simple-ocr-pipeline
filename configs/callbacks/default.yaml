@@ -1,0 +1,18 @@
+defaults:
+  - model_checkpoint.yaml
+  # - early_stopping.yaml
+  - model_summary.yaml
+  - rich_progress_bar.yaml
+  - _self_
+  - learning_rate_monitor.yaml
+
+model_checkpoint:
+  dirpath: "/pub2/experiments/classification/logs/ckpt/"
+  filename: "epoch_{epoch:03d}"
+  monitor: "val/char_accuracy"
+  mode: "max"
+  save_last: True
+  auto_insert_metric_name: False
+
+model_summary:
+  max_depth: -1
